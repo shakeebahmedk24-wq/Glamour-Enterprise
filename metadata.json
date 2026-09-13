@@ -1,0 +1,6 @@
+{
+  "name": "Glamour Enterprises",
+  "description": "Manufacturer and exporter of surgical, dental, orthopedic, veterinary, ophthalmology, and beauty instruments, tungsten carbide instruments, and stainless steel hollow wares in Sialkot, Pakistan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
