@@ -14,9 +14,13 @@ export const HeroVideo: React.FC<HeroVideoProps> = ({
   const [scrollY, setScrollY] = useState(0);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    // Trigger entrance animation on mount
+    setHasMounted(true);
+
     // Check reduced motion preference
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     setPrefersReducedMotion(mediaQuery.matches);
@@ -104,7 +108,9 @@ export const HeroVideo: React.FC<HeroVideoProps> = ({
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Headline, Copy & CTAs */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className={`lg:col-span-7 space-y-6 transition-all duration-700 ease-out ${
+            hasMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}>
             {/* Eyebrow badge - Responsive single-line pill */}
             <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-slate-300 text-xs sm:text-sm font-medium backdrop-blur-md shadow-sm max-w-full">
               <span className="relative flex h-2 w-2 flex-shrink-0">
@@ -161,7 +167,9 @@ export const HeroVideo: React.FC<HeroVideoProps> = ({
           </div>
 
           {/* Right Column: Hero Showcase Image */}
-          <div className="lg:col-span-5 relative">
+          <div className={`lg:col-span-5 relative transition-all duration-700 delay-200 ease-out ${
+            hasMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}>
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-700/80 bg-slate-900/80 backdrop-blur-md p-2.5 sm:p-3 shadow-2xl shadow-black/60 group">
               <div className="relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-[16/11] bg-slate-950">
                 <img
@@ -198,7 +206,9 @@ export const HeroVideo: React.FC<HeroVideoProps> = ({
         </div>
 
         {/* Quick Specifications Bar */}
-        <div className="mt-10 sm:mt-14 pt-6 sm:pt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 border-t border-slate-800/80">
+        <div className={`mt-10 sm:mt-14 pt-6 sm:pt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 border-t border-slate-800/80 transition-all duration-700 delay-300 ease-out ${
+          hasMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+        }`}>
           <div>
             <span className="block text-xl sm:text-2xl font-bold font-['Jost',sans-serif] text-white">
               AISI 420/440

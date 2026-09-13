@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { BUSINESS_INFO, PRODUCT_CATEGORIES } from '../data/categoriesData';
 import { PageRoute } from '../types';
+import { RevealOnScroll } from '../components/RevealOnScroll';
 
 interface AboutUsPageProps {
   onNavigate: (page: PageRoute) => void;
@@ -25,7 +26,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
   return (
     <div className="py-10 sm:py-16 space-y-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Header Banner */}
-      <div className="text-center max-w-3xl mx-auto space-y-3">
+      <RevealOnScroll direction="up" className="text-center max-w-3xl mx-auto space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 text-red-600 text-xs font-bold uppercase tracking-wider">
           <Factory className="w-3.5 h-3.5" /> Manufacturing Background
         </div>
@@ -35,10 +36,10 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
         <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
           Direct manufacturer and global exporter of surgical, dental, orthopedic, veterinary, ophthalmology, and beauty instruments, tungsten carbide instruments, and stainless steel hollow wares located in Sialkot, Pakistan.
         </p>
-      </div>
+      </RevealOnScroll>
 
       {/* Main Narrative & Factory Details (Verified Facts Only) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <RevealOnScroll direction="up" className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         <div className="lg:col-span-7 space-y-5">
           <h2 className="text-2xl sm:text-3xl font-bold font-['Jost',sans-serif] text-slate-900">
             Precision Manufacturing Hub in Sialkot
@@ -161,10 +162,10 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
             </div>
           </div>
         </div>
-      </div>
+      </RevealOnScroll>
 
       {/* Production Workflow Pillars */}
-      <div className="pt-8 border-t border-slate-200">
+      <RevealOnScroll direction="up" className="pt-8 border-t border-slate-200">
         <div className="text-center max-w-2xl mx-auto space-y-2 mb-10">
           <span className="text-xs font-bold text-red-600 uppercase tracking-wider">
             Quality Verification
@@ -202,7 +203,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
             </p>
           </div>
         </div>
-      </div>
+      </RevealOnScroll>
     </div>
   );
 };

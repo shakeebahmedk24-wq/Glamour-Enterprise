@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { HeroVideo } from '../components/HeroVideo';
 import { ReviewsMarquee } from '../components/ReviewsMarquee';
+import { RevealOnScroll } from '../components/RevealOnScroll';
 import { 
   BUSINESS_INFO, 
   PRODUCT_CATEGORIES, 
@@ -73,7 +74,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       />
 
       {/* 2. Four Core Value Pillars (Matching the 4 Red Icons in Old Design) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-10 relative z-20">
+      <RevealOnScroll as="section" direction="up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-10 relative z-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {VALUE_PILLARS.map((pillar, idx) => (
             <div
@@ -92,10 +93,10 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
           ))}
         </div>
-      </section>
+      </RevealOnScroll>
 
       {/* 3. Welcome To Glamour Enterprises (Revamped Manufacturing Overview) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <RevealOnScroll as="section" direction="up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left: Modern High Precision Collage */}
           <div className="lg:col-span-6 relative">
@@ -185,10 +186,10 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
           </div>
         </div>
-      </section>
+      </RevealOnScroll>
 
       {/* 4. Products Sections / 8 Categories Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <RevealOnScroll as="section" direction="up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto space-y-2 mb-10">
           <span className="text-xs font-bold text-red-600 uppercase tracking-wider">
             Our Work Process & Instrument Spectrum
@@ -244,10 +245,10 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
           ))}
         </div>
-      </section>
+      </RevealOnScroll>
 
       {/* 5. Featured Instruments ("Our Best Products" from Old Site with 2 Products Parallel on Mobile) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <RevealOnScroll as="section" direction="up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-8">
           <div>
             <span className="text-xs font-bold text-red-600 uppercase tracking-wider">
@@ -325,10 +326,10 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
           ))}
         </div>
-      </section>
+      </RevealOnScroll>
 
       {/* 6. Metallurgy & Craftsmanship Banner */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <RevealOnScroll as="section" direction="up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-slate-900 text-white p-6 sm:p-10 lg:p-12 border border-slate-800 shadow-2xl relative overflow-hidden">
           <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-red-600/10 to-transparent pointer-events-none"></div>
 
@@ -359,13 +360,15 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
           </div>
         </div>
-      </section>
+      </RevealOnScroll>
 
       {/* 7. Reviews Section (Marquee on Mobile as Explicitly Requested) */}
-      <ReviewsMarquee />
+      <RevealOnScroll direction="up">
+        <ReviewsMarquee />
+      </RevealOnScroll>
 
       {/* 8. Trade Authorities & Export Banking */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <RevealOnScroll as="section" direction="up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-1 mb-6">
           <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
             Export Infrastructure & Regulatory Bodies
@@ -390,7 +393,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
           ))}
         </div>
-      </section>
+      </RevealOnScroll>
     </div>
   );
 };
